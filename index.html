@@ -24,9 +24,9 @@
                             class="second-word">Studio</span></a></div>
                 <nav class="top-navigation">
                     <ul class="menu-nav">
-                        <li><a href="index.html" class="nav-link current">Studio</a></li>
-                        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                        <li><a href="contacts.html" class="nav-link">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link current" href="index.html">Studio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
                     </ul>
                 </nav>
             </div>
@@ -47,7 +47,7 @@
         <div class="title-section-bg-img">
             <div class="title-section">
                 <h1>EFFECTIVE SOLUTIONS FOR<br> YOUR BUSINESS</h1>
-                <button class="button" type="button">Request our service</button>
+                <button ddata-modal-open class="button" type="button">Request our service</button>
             </div>
         </div>
 
@@ -88,9 +88,12 @@
         <section class="what-we-do">
             <h2>What we do</h2>
             <ul class="what-we-do-container">
-                <li><img src="./images/computer.jpg" alt="keyboard tapying" width="370" height="290"></li>
-                <li><img src="./images/laptop.jpg" alt="image with a laptop" width="370" height="290"></li>
-                <li><img src="./images/tablet.jpg" alt="image with a tablet" width="370" height="290"></li>
+                <li><img src="./images/computer.jpg" alt="keyboard tapying" width="370" height="290">
+                <h3 class="what-we-do-footer">DESKTOP APPS</h3></li>
+                <li><img src="./images/laptop.jpg" alt="image with a laptop" width="370" height="290">
+                <h3 class="what-we-do-footer">MOBILE APPS</h3></li>
+                <li><img src="./images/tablet.jpg" alt="image with a tablet" width="370" height="290">
+                <h3 class="what-we-do-footer">DESIGN SOLUTIONS</h3></li>
             </ul>
         </section>
         <section class="our-team">
@@ -236,6 +239,14 @@
         </div>
 
     </footer>
+    <!-- Request a Service Modal -->
+    <div class="modal" data-modal>
+        <div class="modal-content">
+          <button class="close-btn" data-modal-close>&times;</button>
+          Continut modal
+        </div>
+      </div>
+  
     <script src="./js/modal.js"></script>
 </body>
 
