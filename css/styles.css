@@ -762,6 +762,47 @@ address {
   border-radius: 50%;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.subscribe-container {
+  display: flex;
+  width: 570px;
+  padding-left: 93px;
+  padding-top: 15px;
+}
+.subscribe-container h3 {
+  color: var(--background-color-white);
+  font-family: var(--text2-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.subscribe-container button {
+  color: var(--background-color-white);
+  background-color: var(--title-button-hover-color);
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  border-style: none;
+  font-family: var(--text2-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  position: relative;
+}
+
+.subscribe-container svg {
+  position: absolute;
+ 
+}
+
+.subscribe-btn {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
 
 /* modalul*/
 
@@ -781,7 +822,8 @@ address {
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
-  transition: opacity 500ms cubic-bezier(0.4,0,0.2,1),transform 500ms cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-content {
@@ -805,6 +847,11 @@ address {
   right: 8px;
   padding: 0;
   font-size: 18px;
-  transition: transform 500ms cubic-bezier(0.4,0,0.2,1);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
- 
+/*
+.close-btn :hover
+.close-btn :focus {
+  color: var(--text-hover-focus-color);
+  cursor: pointer;
+} */
