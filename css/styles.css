@@ -13,6 +13,7 @@
   --address-color: #ffffff99;
   --background-color-white: #ffffff;
   --title-button-hover-color: #188ce8;
+  --grey-collor: #757575;
 }
 
 /*general*/
@@ -203,13 +204,16 @@ header {
   transition: 250ms, cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
 }
+
 .nav-link:focus::after {
   transition: 250ms, cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
 }
+
 .current {
   color: var(--text-hover-focus-color);
 }
+
 .current::after {
   content: "";
   height: 4px;
@@ -344,10 +348,12 @@ h2 {
   padding-left: 0;
   position: relative;
 }
+
 .what-we-do-container img {
   position: relative;
   z-index: 1;
 }
+
 .what-we-do-footer {
   font-family: var(--text2-font-family);
   font-weight: 700;
@@ -595,6 +601,7 @@ h2 {
   width: 370px;
   cursor: pointer;
 }
+
 .overlay-img {
   position: relative;
   overflow: hidden;
@@ -676,13 +683,14 @@ h2 {
 /*footer section*/
 
 footer {
+  display: flex;
   width: 100vw;
   background-color: var(--title-footer-background-color);
+  justify-content: center;
 }
 
 .global-footer {
   display: flex;
-  padding-left: 12%;
   width: 1200px;
   font-family: var(--text2-font-family);
   font-weight: 400;
@@ -762,12 +770,15 @@ address {
   border-radius: 50%;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .subscribe-container {
   display: flex;
   width: 570px;
-  padding-left: 93px;
+  gap: 12px;
+  padding-left: 165px;
   padding-top: 15px;
 }
+
 .subscribe-container legend {
   color: var(--background-color-white);
   font-family: var(--text2-font-family);
@@ -779,21 +790,33 @@ address {
   padding-bottom: 20px;
 }
 
-.subscribe-container input {
-  background-color: rgba(47, 48, 58, 1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+.email-and-button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.email-and-button input {
+  background-color:var(--title-footer-background-color);
+  border: 1px solid #FFFFFF4D;
+  box-shadow: 0px 4px 4px 0px #00000026;
   border-radius: 4px;
   padding: 15px 16px;
-  color: var(--white);
+  color: var(--background-color-white);
   display: flex;
   height: 50px;
   flex-grow: 1;
   width: 358px;
-  transition: border-color var(--transition);
+  transition: border-color var(--text-hover-focus-color);
 }
 
-.footer-email input::placeholder{
+.email-and-button input:focus {
+  
+  outline-color: var(--text-hover-focus-color);
+  color: var(--address-color);
+}
+
+.email-and-button input::placeholder {
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
@@ -801,11 +824,8 @@ address {
   font-weight: 400;
 }
 
-.subscribe.btn{height: 50px;
-}
-.subscribe-container button {
+.subscribe-btn {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   color: var(--background-color-white);
   background-color: var(--title-button-hover-color);
@@ -820,17 +840,20 @@ address {
   letter-spacing: 0.96px;
   cursor: pointer;
   line-height: 1.87;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px 0px #00000026;
   padding: 10px 28px 10px 43px;
   transition: var(--text-hover-focus-color);
-  
 }
 
 .subscribe.btn button:hover,
 .subscribe.btn button:focus {
-  background-color:var(--title-button-hover-color);
+  background-color: var(--title-button-hover-color);
 }
 
+.email-and-button svg {
+  position: absolute;
+  margin-left: 510px;
+}
 
 /* modalul*/
 
@@ -856,11 +879,18 @@ address {
 
 .modal-content {
   position: relative;
-  background-color: #fff;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-white);
   width: 528px;
   height: 581px;
+  padding: 40px;
+  border: 1px solid #21212133;
   border-radius: 4px;
+  box-shadow: 0, 2, 1, 0 rgba(0, 0, 0, 0.2)0, 1, 1, 0 rgba(0, 0, 0, 0.14)0, 1, 3, 0rgba(0, 0, 0, 0.12);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
@@ -879,126 +909,133 @@ address {
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.close-btn:active,
+.close-btn:focus,
+.close-btn:hover {
+  fill: var(--text-hover-focus-color);
+  cursor: pointer;
+}
 
-/*
-.modal-title{display: flex;
-  justify-content: center;
+.modal-title {
+  text-align: center;
   font-family: var(--text2-font-family);
-  width:448px;
-  height:23px;
+  font-weight: 700px;
   font-size: 20px;
-  font-weight: 700;
-  line-height: 23,44px;
   letter-spacing: 0.03;
-  color: #212121;
-  padding-top: 20px;
-  padding-bottom: 12px;
-}
-.modal-contact {
-  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 448px;
-    gap:10px;
-    padding-left: 20px;
-}
-.text-area {
-  display: flex;
-    flex-direction: column;
-    height: 40px;
-    position: relative;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-}
-.text-area svg {
-  height: 18px;
-  width: 18px;
-  position:absolute;
-  top: calc(50% - 7px);
-  left: 12px;
-  transition: fill var(--transition)
+  line-height: 23.44px;
+  color: var(--subtitle-color);
+  margin-bottom: 12px;
 }
 
-text {
-height: 40px;
-border: none;
+.form-label {
+  font-family: var(--text2-font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--paragraph-color);
+  line-height: 14.06px;
+  letter-spacing: 0.01;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 448px;
+  margin-bottom: 10px;
+}
+
+.form-label input {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #21212133;
+  margin-top: 4px;
+  height: 40px;
+  padding-left: 42px;
+}
+
+.form-label input:focus {
+  color: var(--subtitle-color);
+  outline-color: var(--text-hover-focus-color);
+}
+
+.form-label input:focus + svg {
+  fill: #2196f3;
+}
+
+.form-label svg {
+  position: absolute;
+  margin-left: 12px;
+  margin-top: -30px;
+  fill: var(--button-color);
 }
 
 textarea {
-  height:120px;
+  width: 100%;
+  height: 120px;
+  border: 1px solid #21212133;
+  border-radius: 4px;
   padding: 12px 16px;
-  }
+  margin-top: 4px;
+  overflow: hidden;
+}
 
 textarea::placeholder {
   font-family: var(--text2-font-family);
   font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41;
+  letter-spacing: 0.01;
   color: #75757580;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  text-align: left;
 }
 
-.text-area, textarea {
-  border-radius:4px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    transition: var(--transition);
+textarea:focus {
+  outline-color: var(--text-hover-focus-color);
+  color: var(--subtitle-color);
 }
 
-.text-area:focus,
-textarea:focus{
-  border:1px solid rgba(33, 150, 243, 1);
-  height: 40px;
+.checkbox {
+  width: 419px;
+  height: 24px;
+  position: relative;
 }
 
-.text-area:focus+svg{
-  fill: rgba(33, 150, 243, 1);
-}
-
-.modal-section .form-label{
+.checkbox span {
   font-family: var(--text2-font-family);
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03;
+  color: #757575;
+  text-align: center;
 }
 
-.modal-section {
-  padding-bottom: 10px
+.checkbox span a {
+  color: var(--text-hover-focus-color);
+  text-decoration-line: underline;
 }
 
-.terms-and-co {position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap:8px;
-  cursor: pointer;
-  padding-top: 20px;
-  padding-bottom: 30px;}
-
-  .terms-and-co-text {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.03em;
-    color:#757575;
-  }
-
-  .terms-and-co-text a{
-    color: var(--text-hover-focus-color);
-    text-decoration: underline;
-  }
-
-.terms-and-co svg{
-  position:absolute;
-    left:18px;
-    top:25.5px;
+.checkbox svg {
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -2px
 }
 
-.submit-btn{
+.checkbox input {
+  opacity: 0;
+}
+
+.checkbox svg .checked {
+  opacity: 0;
+}
+
+.checkbox input:checked+svg .checked {
+  opacity: 1;
+  fill: var(--text-hover-focus-color);
+}
+
+.submit-btn {
+  display: block;
   width: 200px;
   height: 50px;
-  background-color:var(--text-hover-focus-color);
+  background-color: var(--text-hover-focus-color);
   border: none;
   border-radius: 4px;
   color: var(--background-color-white);
@@ -1007,20 +1044,12 @@ textarea:focus{
   letter-spacing: 0.96px;
   cursor: pointer;
   text-align: center;
-  margin: auto;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 17px;
+  margin-top: 30px;
 }
 
 .submit-btn:hover,
-.submit-btn:focus{
+.submit-btn:focus {
   background-color: #188CE8;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-}  
-/*
-.close-btn :hover
-.close-btn :focus {
-  color: var(--text-hover-focus-color);
-  cursor: pointer;
-} */
-
+}
